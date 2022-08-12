@@ -1,11 +1,13 @@
 const http = require('http');
+const routes = require('./routes_handler');
+const HOST = 'localhost';
+const PORT = 3000;
 
-const server = http.createServer((req, res) => {
-    res.setHeader('Content-Type', "text/html");
-    res.write('<html>');
-    res.write('<h1>HTTP Server</h1>');
-    res.write('</html>');
-    res.end();
+const server = http.createServer(routes.routesHandler);
+
+server.listen(PORT, () => {
+    const a = [{
+        a:1
+    }]
+    console.log(`Server running at http://${HOST}:${PORT}/`);
 });
-
-server.listen(3000);
