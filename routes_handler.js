@@ -40,9 +40,16 @@ const routesHandler = (req, res) => {
             break;
         case 'POST': 
             if (url === '/add_new_user') {
+                const body = [];
                 req.on('data', (chunk) => {
-                    console.log(chunk.toString());
+                    body.push(chunk);
                 });
+                req.on('end', () => {
+                    const parsedBody = Buffer.concat(body).toString();
+                    console.log(parsedBody.split('=')[1]);
+                });
+                res.statusCode = 302;
+                res.setHeader('Location', '/');
                 res.end();
             }
             break;
