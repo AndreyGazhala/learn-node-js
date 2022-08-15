@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/AndreyGazhala/learn-node-js/issues"
   },
-  "homepage": "https://github.com/AndreyGazhala/learn-node-js#readme"
+  "homepage": "https://github.com/AndreyGazhala/learn-node-js#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
 }
